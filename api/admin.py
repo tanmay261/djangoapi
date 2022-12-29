@@ -5,6 +5,7 @@ from api.models import Company,Employee
 # LEARN
 # To display only specific columns for Companies
 class CompanyAdmin(admin.ModelAdmin):
+    search_fields=('name',)
     list_display=('name','location','type')
 
 
@@ -12,6 +13,7 @@ class CompanyAdmin(admin.ModelAdmin):
 # To display only specific columns for Employees
 class EmployeeAdmin(admin.ModelAdmin):
     list_display=('name','position','company')
+    list_filter=('company',)
 
 admin.site.register(Company,CompanyAdmin)
 admin.site.register(Employee,EmployeeAdmin)
