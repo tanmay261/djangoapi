@@ -11,6 +11,11 @@ class Company(models.Model):
     added_date=models.DateTimeField(auto_now=True)
     active=models.BooleanField(default=True)
 
+#LEARN
+# Overriding the self function to return the name of the company like "AIR" instead of an object like "Company obect(1)"
+    def __str__(self):
+        return self.name
+
 #Creating Employee Model
 
 class Employee(models.Model):
