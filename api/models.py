@@ -20,4 +20,5 @@ class Employee(models.Model):
     phone=models.CharField(max_length=10)
     about=models.TextField()
     position=models.CharField(max_length=50,choices=(("manager","Manager"),("Software Developer", "SD"),("Project Leader ","PL")))
-    
+
+    company=models.ForeignKey(Company,on_delete=models.CASCADE)
